@@ -1,11 +1,6 @@
 def fizzbuzz(number)
-  if number % 15 == 0
-    'fizzbuzz'
-  elsif number % 3 == 0
-    'fizz'
-  elsif number % 5 == 0
-    'buzz'
-  else
-    number.to_s
-  end
+  output = ""
+  {3 => "fizz", 5 => "buzz"}.each { |k,v| number % k == 0 ? output += v : nil }
+  output += number.to_s unless !output.empty?
+  output
 end
